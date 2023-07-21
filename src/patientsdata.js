@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { db1 } from './firebase';
+import jsPDF from 'jspdf';
+
 
 function PatientsData() {
   const [patients, setPatients] = useState([]);
+
 
   useEffect(() => {
     const fetchPatients = async () => {
@@ -23,7 +26,40 @@ function PatientsData() {
       prevPatients.filter((patient) => patient.id !== patientId)
     );
   };
+  const handleDownloadPDF = (patient) => {
+    const doc = new jsPDF();
+    const textContent =
+      `Name: ${patient.name}\n` +
+      `Age: ${patient.age}\n` +
+      `Phone Number: ${patient.phoneNumber}\n` +
+      `Left Foot Point 1 Average: ${patient.leftfootpoint1avg}\n` +
+      `Left Foot Point 1 Max: ${patient.leftfootpoint1max}\n` +
+      `Left Foot Point 2 Average: ${patient.leftfootpoint2avg}\n` +
+      `Left Foot Point 2 Max: ${patient.leftfootpoint2max}\n` +
+      `Left Foot Point 3 Average: ${patient.leftfootpoint3avg}\n` +
+      `Left Foot Point 3 Max: ${patient.leftfootpoint3max}\n` +
+      `Left Foot Point 4 Average: ${patient.leftfootpoint4avg}\n` +
+      `Left Foot Point 4 Max: ${patient.leftfootpoint4max}\n` +
+      `Left Foot Point 1/3 Max: ${patient.leftfootpoint1by3max}\n` +
+      `Left Foot Point 2/3 Max: ${patient.leftfootpoint2by3max}\n` +
+      `GSR: ${patient.gsr}\n` +
+      `Temperature: ${patient.temperature}\n` +
+      `Right Foot Point 1 Average: ${patient.rightfootpoint1avg}\n` +
+      `Right Foot Point 1 Max: ${patient.rightfootpoint1max}\n` +
+      `Right Foot Point 2 Average: ${patient.rightfootpoint2avg}\n` +
+      `Right Foot Point 2 Max: ${patient.rightfootpoint2max}\n` +
+      `Right Foot Point 3 Average: ${patient.rightfootpoint3avg}\n` +
+      `Right Foot Point 3 Max: ${patient.rightfootpoint3max}\n` +
+      `Right Foot Point 4 Average: ${patient.rightfootpoint4avg}\n` +
+      `Right Foot Point 4 Max: ${patient.rightfootpoint4max}\n` +
+      `GSR Right: ${patient.gsrRight}\n` +
+      `Temperature Right: ${patient.temperatureRight}\n` +
+      '---------------------\n' // A separator for each patient
+    
+    doc.text(textContent, 10, 10);
+    doc.save(`${patient.name}.pdf`);  };
 
+  
   return (
     <div>
       <h1 className="bg-slate-500 h-16 text-white font-semibold text-3xl rounded">
@@ -68,9 +104,17 @@ function PatientsData() {
             >
               Remove
             </button>
+            <button
+              onClick={() => handleDownloadPDF(patient)} // Pass the patient as an argument
+              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+            >
+              Download PDF
+            </button>
           </li>
         ))}
       </ul>
+      
+      
     </div>
   );
 }
