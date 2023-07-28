@@ -439,9 +439,9 @@ function Plantar() {
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">Gyroscope</h3>
-                <p className="my-2 text-[#1bb669]">Angle = {leftData9}</p>
-                <p className="my-2 text-[#1bb669]">Acceleration = {leftData10}</p>
-                <p className="my-2 text-[#1bb669]">Velocity = {leftData11}</p>
+                <p className="my-2 text-[#1bb669]">Angle = {rightData7}</p>
+                <p className="my-2 text-[#1bb669]">Acceleration = {rightData8}</p>
+                <p className="my-2 text-[#1bb669]">Velocity = {rightData11}</p>
               </div>
             </div>
           
