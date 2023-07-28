@@ -63,7 +63,7 @@ function Plantar() {
   const [v, setV] = useState([]);
   const [x, setX] = useState([]);
   const [y, setY] = useState([]);
-  const [Z, setZ] = useState([]);
+  const [z, setZ] = useState([]);
   const [AA, setAA] = useState([]);
 
   useEffect(() => {
@@ -104,7 +104,7 @@ function Plantar() {
           leftfootpoint4max: [...h+","],
           Angle: [...u+","],
           Acceleration: [...v+","],
-          Velocity: [...Z+","],
+          Velocity: [...z+","],
           gsr: [...i+","],
           temperature: [...j+","],
           rightfootpoint1avg: [...k + ","],
