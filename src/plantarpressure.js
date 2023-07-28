@@ -100,11 +100,11 @@ function Plantar() {
           leftfootpoint2max: [...d] +",",
           leftfootpoint3avg: [...ed+","],
           leftfootpoint3max: [...f +","],
-          leftfootpoint4avg: [...u]+",",
-          leftfootpoint4max: [...v+","],
-          leftfootpoint1by4max: [...g+","],
-          leftfootpoint2by4max: [...h+","],
-          leftfootpoint3by4max: [...Z+","],
+          leftfootpoint4avg: [...g]+",",
+          leftfootpoint4max: [...h+","],
+          Angle: [...u+","],
+          Acceleration: [...v+","],
+          Velocity: [...Z+","],
           gsr: [...i+","],
           temperature: [...j+","],
           rightfootpoint1avg: [...k + ","],
@@ -118,6 +118,7 @@ function Plantar() {
           rightfootpoint1by4maxpressure: [...q+","],
           rightfootpoint2by4maxpressure: [...r+","],
           rightfootpoint3by4maxpressure: [...AA+","],
+        
           gsr1: [...s+","],
           temperature1: [...t+","],
         })
@@ -184,19 +185,19 @@ function Plantar() {
       setLeftData8(value);
       setH((prevData) => [...prevData, value]);
     });
-    const leftRef9 = ref(db, 'force/n1');
+    const leftRef9 = ref(db, 'gyro/1');
     onValue(leftRef9, (snapshot) => {
       const value = snapshot.val();
       setLeftData9(value);
       setU((prevData) => [...prevData, value]);
     });
-    const leftRef10 = ref(db, 'force/n2');
+    const leftRef10 = ref(db, 'gyro/2');
     onValue(leftRef10, (snapshot) => {
       const value = snapshot.val();
       setLeftData10(value);
       setV((prevData) => [...prevData, value]);
     });
-    const leftRef11 = ref(db, 'force/n5');
+    const leftRef11 = ref(db, 'gyro/3');
     onValue(leftRef11, (snapshot) => {
       const value = snapshot.val();
       setLeftData11(value);
@@ -375,32 +376,19 @@ function Plantar() {
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 4:</h3>
-                <p className="my-2 text-[#1bb669]">avg pressure = {leftData9}</p>
-                <p className="my-2 text-[#1bb669]">max pressure = {leftData10}</p>
-              </div>
-            </div>
-           
-            <div className="pl-5 py-2 mb-4">
-            <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE POINT 1/4 :</h3>
-                <p className="my-2 text-[#1bb669]"> pressure = {leftData7}</p>
-                {/* <p className="my-2 text-[#1bb669]">max pressure = {rightData3}</p> */}
+                <p className="my-2 text-[#1bb669]">avg pressure = {leftData7}</p>
+                <p className="my-2 text-[#1bb669]">max pressure = {leftData8}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE POINT 2/4 :</h3>
-                <p className="my-2 text-[#1bb669]"> pressure = {leftData8}</p>
-                {/* <p className="my-2 text-[#1bb669]">max pressure = {rightData3}</p> */}
+                <h3 className="font-bold text-[#1bb669]">Gyroscope</h3>
+                <p className="my-2 text-[#1bb669]">Angle = {leftData9}</p>
+                <p className="my-2 text-[#1bb669]">Acceleration = {leftData10}</p>
+                <p className="my-2 text-[#1bb669]">Velocity = {leftData11}</p>
               </div>
             </div>
-            <div className="pl-5 py-2 mb-4">
-            <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE POINT 3/4 :</h3>
-                <p className="my-2 text-[#1bb669]"> pressure = {leftData11}</p>
-                {/* <p className="my-2 text-[#1bb669]">max pressure = {rightData3}</p> */}
-              </div>
-            </div>
+
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">GSR</h3>
@@ -413,7 +401,8 @@ function Plantar() {
                 <p className="my-2 text-[#1bb669]">temperature = {temperature}</p>
               </div>
             </div>
-          </div>
+           
+           </div>
           <div className="md:w-1/3 flex items-center justify-center">
             <img className="rounded-full" src={gifImage} alt="GIF" />
           </div>
@@ -449,25 +438,13 @@ function Plantar() {
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE POINT 1/4 :</h3>
-                <p className="my-2 text-[#1bb669]"> pressure = {rightData7}</p>
-                {/* <p className="my-2 text-[#1bb669]">max pressure = {rightData3}</p> */}
+                <h3 className="font-bold text-[#1bb669]">Gyroscope</h3>
+                <p className="my-2 text-[#1bb669]">Angle = {leftData9}</p>
+                <p className="my-2 text-[#1bb669]">Acceleration = {leftData10}</p>
+                <p className="my-2 text-[#1bb669]">Velocity = {leftData11}</p>
               </div>
             </div>
-            <div className="pl-5 py-2 mb-4">
-            <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE POINT 2/4 :</h3>
-                <p className="my-2 text-[#1bb669]"> pressure = {rightData8}</p>
-                {/* <p className="my-2 text-[#1bb669]">max pressure = {rightData3}</p> */}
-              </div>
-            </div>
-            <div className="pl-5 py-2 mb-4">
-            <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE POINT 3/4 :</h3>
-                <p className="my-2 text-[#1bb669]"> pressure = {rightData11}</p>
-                {/* <p className="my-2 text-[#1bb669]">max pressure = {rightData3}</p> */}
-              </div>
-            </div>
+          
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">GSR</h3>
@@ -486,6 +463,8 @@ function Plantar() {
       </div>
     </div>
     </div>
+    
+    
   );
 }
 

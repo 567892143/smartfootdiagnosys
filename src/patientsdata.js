@@ -40,8 +40,9 @@ function PatientsData() {
       `Left Foot Point 3 Max: ${patient.leftfootpoint3max}\n` +
       `Left Foot Point 4 Average: ${patient.leftfootpoint4avg}\n` +
       `Left Foot Point 4 Max: ${patient.leftfootpoint4max}\n` +
-      `Left Foot Point 1/3 Max: ${patient.leftfootpoint1by3max}\n` +
-      `Left Foot Point 2/3 Max: ${patient.leftfootpoint2by3max}\n` +
+      `gyro Angle: ${patient.Angle}\n` +
+      `Acceleration: ${patient.Acceleration}\n` +
+      `Velocity: ${patient.Velocity}\n` +
       `GSR: ${patient.gsr}\n` +
       `Temperature: ${patient.temperature}\n` +
       `Right Foot Point 1 Average: ${patient.rightfootpoint1avg}\n` +
@@ -52,6 +53,9 @@ function PatientsData() {
       `Right Foot Point 3 Max: ${patient.rightfootpoint3max}\n` +
       `Right Foot Point 4 Average: ${patient.rightfootpoint4avg}\n` +
       `Right Foot Point 4 Max: ${patient.rightfootpoint4max}\n` +
+      `gyro rigtht Angle: ${patient.Angle}\n` +
+      `Acceleration: ${patient.Acceleration}\n` +
+      `Velocity: ${patient.Velocity}\n` +
       `GSR Right: ${patient.gsrRight}\n` +
       `Temperature Right: ${patient.temperatureRight}\n` +
       '---------------------\n' // A separator for each patient
@@ -82,8 +86,10 @@ function PatientsData() {
 <p className='border-2'>leftfootpoint3max: {patient.leftfootpoint3max}</p>
 <p className='border-2'>leftfootpoint4avg: {patient.leftfootpoint4avg}</p>
 <p className='border-2'>leftfootpoint4max: {patient.leftfootpoint4max}</p>
-<p className='border-2'>leftfootpoint1by3max: {patient.leftfootpoint1by3max}</p>
-<p className='border-2'>leftfootpoint2by3max: {patient.leftfootpoint2by3max}</p>
+<p className='border-2'>gyro angle: {patient.Angle}</p>
+<p className='border-2'>gyro acceleration: {patient.Acceleration}</p>
+<p className='border-2'>gyro velocity: {patient.Velocity}</p>
+
 <p className='border-2'>gsr: {patient.gsr}</p>
 <p className='border-2'>temperature: {patient.temperature}</p>
 <p className='border-2'>rightfootpoint1avg: {patient.rightfootpoint1avg}</p>
@@ -94,6 +100,9 @@ function PatientsData() {
 <p className='border-2'>rightfootpoint3max: {patient.rightfootpoint3max}</p>
 <p className='border-2'>rightfootpoint4avg: {patient.rightfootpoint4avg}</p>
 <p className='border-2'>rightfootpoint4max: {patient.rightfootpoint4max}</p>
+<p className='border-2'>gyro angle: {patient.Angle}</p>
+<p className='border-2'>gyro acceleration: {patient.Acceleration}</p>
+<p className='border-2'>gyro velocity: {patient.Velocity}</p>
 <p className='border-2'>gsrRight: {patient.gs1r}</p>
 <p className='border-2'>temperatureRight: {patient.temperature1}</p>
             
