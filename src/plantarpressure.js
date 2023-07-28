@@ -351,38 +351,38 @@ function Plantar() {
       <div className="mx-auto container py-10">
         <div className="flex flex-col md:flex-row md:items-center">
           <div className="md:w-1/3">
-            <h1 className='pl-36 text-3xl'>LEFT FOOT</h1>
+            <h1 className='pl-36 text-3xl'>RIGHT FOOT</h1>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 1:</h3>
+                <h3 className="font-bold text-[#1bb669]">GREAT TOE:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {leftData1}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {leftData2}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 2:</h3>
+                <h3 className="font-bold text-[#1bb669]">MEDIAL FOREFOOT:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {leftData3}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {leftData4}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 3:</h3>
+                <h3 className="font-bold text-[#1bb669]">LATERAL FOREFOOT:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {leftData5}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {leftData6}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 4:</h3>
+                <h3 className="font-bold text-[#1bb669]">HEEL:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {leftData7}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {leftData8}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">Gyroscope</h3>
+                <h3 className="font-bold text-[#1bb669]">FOOT KINEMATICS</h3>
                 <p className="my-2 text-[#1bb669]">Angle = {leftData9}</p>
                 <p className="my-2 text-[#1bb669]">Acceleration = {leftData10}</p>
                 <p className="my-2 text-[#1bb669]">Velocity = {leftData11}</p>
@@ -391,13 +391,13 @@ function Plantar() {
 
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">GSR</h3>
+                <h3 className="font-bold text-[#1bb669]">SKIN RESPONSE</h3>
                 <p className="my-2 text-[#1bb669]">gsr = {gsr}</p>
               </div>
             </div>
             <div className="pl-5 py-2">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">TEMP</h3>
+                <h3 className="font-bold text-[#1bb669]">THERMAL DATA</h3>
                 <p className="my-2 text-[#1bb669]">temperature = {temperature}</p>
               </div>
             </div>
@@ -407,38 +407,38 @@ function Plantar() {
             <img className="rounded-full" src={gifImage} alt="GIF" />
           </div>
           <div className="md:w-1/3 md:text-right">
-          <h1 className= " pr-36 text-3xl">RIGHT FOOT</h1>
+          <h1 className= " pr-36 text-3xl">LEFT FOOT</h1>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 1:</h3>
+                <h3 className="font-bold text-[#1bb669]">GREAT TOE:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {rightData1}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {rightData2}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 2:</h3>
+                <h3 className="font-bold text-[#1bb669]">MEDIAL FORE FOOT:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {rightData3}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {rightData4}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
               <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 3:</h3>
+                <h3 className="font-bold text-[#1bb669]">LATERAL FOREFOOT:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {rightData5}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {rightData6}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">FORCE SENSE POINT 4:</h3>
+                <h3 className="font-bold text-[#1bb669]">HEEL:</h3>
                 <p className="my-2 text-[#1bb669]">avg pressure = {rightData9}</p>
                 <p className="my-2 text-[#1bb669]">max pressure = {rightData10}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">Gyroscope</h3>
+                <h3 className="font-bold text-[#1bb669]">FOOT KINEMATICS</h3>
                 <p className="my-2 text-[#1bb669]">Angle = {rightData7}</p>
                 <p className="my-2 text-[#1bb669]">Acceleration = {rightData8}</p>
                 <p className="my-2 text-[#1bb669]">Velocity = {rightData11}</p>
@@ -447,13 +447,13 @@ function Plantar() {
           
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">GSR</h3>
+                <h3 className="font-bold text-[#1bb669]">SKIN RESPONSE</h3>
                 <p className="my-2 text-[#1bb669]">gsr = {gsr1}</p>
               </div>
             </div>
             <div className="pl-5 py-2">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
-                <h3 className="font-bold text-[#1bb669]">TEMP</h3>
+                <h3 className="font-bold text-[#1bb669]">THERMAL DATA</h3>
                 <p className="my-2 text-[#1bb669]">temperature = {temperature1}</p>
               </div>
             </div>
