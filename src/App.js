@@ -4,7 +4,6 @@ import Plantardata from './plantarpressure';
 import Landing from './landing';
 import Patient from './patientsdata';
 
-import Login from './login'; 
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom' ;
 import Graphicaldata from './GraphicalData';
 
