@@ -7,7 +7,9 @@ import {Link} from 'react-router-dom';
 
 import {db1} from './firebase';
 
+
 function Plantar() {
+ 
   const [leftData1, setLeftData1] = useState(null);
   const [leftData2, setLeftData2] = useState(null);
   const [leftData3, setLeftData3] = useState(null);
@@ -19,7 +21,7 @@ function Plantar() {
   const [leftData9, setLeftData9] = useState(null);
   const [leftData10, setLeftData10] = useState(null);
   const [leftData11, setLeftData11] = useState(null);
-
+  const [emg,SetEMG]=useState(null);
   const [gsr, setGSR] = useState(null);
   const [temperature, setTemperature] = useState(null);
   const [rightData1, setRightData1] = useState(null);
@@ -35,6 +37,7 @@ function Plantar() {
   const [rightData11, setRightData11] = useState(null);
   const [gsr1, setGSR1] = useState(null);
   const [temperature1, setTemperature1] = useState(null);
+ 
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -65,6 +68,7 @@ function Plantar() {
   const [y, setY] = useState([]);
   const [z, setZ] = useState([]);
   const [AA, setAA] = useState([]);
+  const [AB, setAB] = useState([]);
 
   useEffect(() => {
     if (!isCollectingData) {
@@ -94,6 +98,7 @@ function Plantar() {
           name: name,
           age: age,
           phoneNumber: phoneNumber,
+          
           leftfootpoint1avg: [...a+","],
           leftfootpoint1max: [...b+","],
           leftfootpoint2avg: [...c +","],
@@ -107,6 +112,7 @@ function Plantar() {
           Velocity: [...z+","],
           gsr: [...i+","],
           temperature: [...j+","],
+          EMG :[...AB+","],
           rightfootpoint1avg: [...k + ","],
           rightfootpoint1max: [...l+","],
           rightfootpoint2avg: [...m+","],
@@ -129,6 +135,7 @@ function Plantar() {
           console.error('Error adding document:', error);
         });
     }
+    
 
     // Reset the form fields
     setName('');
@@ -216,6 +223,13 @@ function Plantar() {
       const value = snapshot.val();
       setTemperature(value);
       setJ((prevData) => [...prevData, value]);
+    });
+
+    const emgref=ref(db,'emg/1');
+    onValue(emgref,(snapshot)=>{
+      const value=snapshot.val();
+      SetEMG(value);
+      setAB((prevData) => [...prevData, value]);
     });
 
     const rightRef1 = ref(db, 'force/9');
@@ -386,6 +400,7 @@ function Plantar() {
                 <p className="my-2 text-[#1bb669]">Angle = {leftData9}</p>
                 <p className="my-2 text-[#1bb669]">Acceleration = {leftData10}</p>
                 <p className="my-2 text-[#1bb669]">Velocity = {leftData11}</p>
+                <Link to="/graphical-data"><button className='bg-blue-400 hover:bg-blue-600 rounded-md px-3 hover:text-white'>graphical data</button></Link>
               </div>
             </div>
 
@@ -399,6 +414,12 @@ function Plantar() {
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">THERMAL DATA</h3>
                 <p className="my-2 text-[#1bb669]">temperature = {temperature}</p>
+              </div>
+            </div>
+            <div className="pl-5 py-2">
+            <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
+                <h3 className="font-bold text-[#1bb669]">EMG DATA</h3>
+                <p className="my-2 text-[#1bb669]">VALUE = {emg}</p>
               </div>
             </div>
            
@@ -442,6 +463,7 @@ function Plantar() {
                 <p className="my-2 text-[#1bb669]">Angle = {rightData7}</p>
                 <p className="my-2 text-[#1bb669]">Acceleration = {rightData8}</p>
                 <p className="my-2 text-[#1bb669]">Velocity = {rightData11}</p>
+                <button className='bg-blue-400 hover:bg-blue-600 rounded-md px-3 hover:text-white'>graphical data</button>
               </div>
             </div>
           
@@ -457,7 +479,12 @@ function Plantar() {
                 <p className="my-2 text-[#1bb669]">temperature = {temperature1}</p>
               </div>
             </div>
-          
+            <div className="pl-5 py-2">
+            <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
+                <h3 className="font-bold text-[#1bb669]">EMG DATA</h3>
+                <p className="my-2 text-[#1bb669]">VALUE = {emg}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
