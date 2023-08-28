@@ -48,11 +48,14 @@ function GraphicalData() {
   const [gyroData, setGyroData] = useState([]);
   const [accelerationData, setAccelerationData] = useState([]);
   const [velocityData, setVelocityData] = useState([]);
+  const [gsrData, setGsrData] = useState([]);
 
+ 
   useEffect(() => {
     const gyroRef = ref(db, 'gyro/1');
     const accelerationRef = ref(db, 'gyro/2');
     const velocityRef = ref(db, 'gyro/3');
+    const gsrRef=ref(db,'gsr/1');
 
     onValue(gyroRef, (snapshot) => {
       const value = snapshot.val();
@@ -68,6 +71,10 @@ function GraphicalData() {
       const value = snapshot.val();
       setVelocityData((prevData) => [...prevData, value]);
     });
+    onValue(gsrRef, (snapshot) => {
+      const value = snapshot.val();
+      setGsrData((prevData) => [...prevData, value]);
+    });
   }, []);
 
   return (
@@ -75,6 +82,8 @@ function GraphicalData() {
       <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)" />
       <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)" />
       <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(75, 192, 75)" />
+      <Graph data={gsrData} label="skin response" borderColor="rgb(75, 192, 75)" />
+
     </div>
   );
 }
