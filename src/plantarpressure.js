@@ -37,7 +37,7 @@ function Plantar() {
   const [rightData11, setRightData11] = useState(null);
   const [gsr1, setGSR1] = useState(null);
   const [temperature1, setTemperature1] = useState(null);
- 
+  const [emg2,SetEMG2]=useState(null);
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -69,6 +69,7 @@ function Plantar() {
   const [z, setZ] = useState([]);
   const [AA, setAA] = useState([]);
   const [AB, setAB] = useState([]);
+  const [GH, setGH] = useState([]);
 
   useEffect(() => {
     if (!isCollectingData) {
@@ -287,19 +288,19 @@ function Plantar() {
       setRightData8(value);
       setR((prevData) => [...prevData, value]);
     });
-    const rightRef9 = ref(db, 'force/n3');
+    const rightRef9 = ref(db, 'gyro/n1');
     onValue(rightRef9, (snapshot) => {
       const value = snapshot.val();
       setRightData9(value);
       setX((prevData) => [...prevData, value]);
     });
-    const rightRef10 = ref(db, 'force/n4');
+    const rightRef10 = ref(db, 'gyro/n2');
     onValue(rightRef10, (snapshot) => {
       const value = snapshot.val();
       setRightData10(value);
       setY((prevData) => [...prevData, value]);
     });
-    const rightRef11 = ref(db, 'force/n6');
+    const rightRef11 = ref(db, 'gyro/n3');
     onValue(rightRef11, (snapshot) => {
       const value = snapshot.val();
       setRightData11(value);
@@ -318,6 +319,12 @@ function Plantar() {
       const value = snapshot.val();
       setTemperature1(value);
       setT((prevData) => [...prevData, value]);
+    });
+    const emgRef2 = ref(db, 'emg/2');
+    onValue(emgRef2, (snapshot) => {
+      const value = snapshot.val();
+      SetEMG2(value);
+      setGH((prevData) => [...prevData, value]);
     });
   }, []);
 
@@ -453,15 +460,15 @@ function Plantar() {
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">HEEL:</h3>
-                <p className="my-2 text-[#1bb669]">avg pressure = {rightData9}</p>
-                <p className="my-2 text-[#1bb669]">max pressure = {rightData10}</p>
+                <p className="my-2 text-[#1bb669]">avg pressure = {rightData7}</p>
+                <p className="my-2 text-[#1bb669]">max pressure = {rightData8}</p>
               </div>
             </div>
             <div className="pl-5 py-2 mb-4">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">FOOT KINEMATICS</h3>
-                <p className="my-2 text-[#1bb669]">Angle = {rightData7}</p>
-                <p className="my-2 text-[#1bb669]">Acceleration = {rightData8}</p>
+                <p className="my-2 text-[#1bb669]">Angle = {rightData9}</p>
+                <p className="my-2 text-[#1bb669]">Acceleration = {rightData10}</p>
                 <p className="my-2 text-[#1bb669]">Velocity = {rightData11}</p>
                 <button className='bg-blue-400 hover:bg-blue-600 rounded-md px-3 hover:text-white'>graphical data</button>
               </div>
@@ -482,7 +489,7 @@ function Plantar() {
             <div className="pl-5 py-2">
             <div className="bg-slate-200 w-full md:w-[225px] mx-auto flex flex-col items-start border-black rounded-xl px-4 py-2">
                 <h3 className="font-bold text-[#1bb669]">EMG DATA</h3>
-                <p className="my-2 text-[#1bb669]">VALUE = {emg}</p>
+                <p className="my-2 text-[#1bb669]">VALUE = {emg2}</p>
               </div>
             </div>
           </div>

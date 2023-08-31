@@ -32,7 +32,7 @@ function Graph(props) {
         data: data,
         fill: false,
         borderColor: borderColor,
-        tension: 0.1,
+        tension: 0.4,
       },
     ],
   };
@@ -49,6 +49,7 @@ function GraphicalData() {
   const [accelerationData, setAccelerationData] = useState([]);
   const [velocityData, setVelocityData] = useState([]);
   const [gsrData, setGsrData] = useState([]);
+  const [emgData, setEmgData] = useState([]);
 
  
   useEffect(() => {
@@ -56,6 +57,7 @@ function GraphicalData() {
     const accelerationRef = ref(db, 'gyro/2');
     const velocityRef = ref(db, 'gyro/3');
     const gsrRef=ref(db,'gsr/1');
+    const emgRef=ref(db,'emg/1');
 
     onValue(gyroRef, (snapshot) => {
       const value = snapshot.val();
@@ -75,16 +77,26 @@ function GraphicalData() {
       const value = snapshot.val();
       setGsrData((prevData) => [...prevData, value]);
     });
+    onValue(emgRef, (snapshot) => {
+      const value = snapshot.val();
+      setEmgData((prevData) => [...prevData, value]);
+    });
   }, []);
 
   return (
-    <div className="flex">
-      <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)" />
-      <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)" />
-      <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(75, 192, 75)" />
-      <Graph data={gsrData} label="skin response" borderColor="rgb(75, 192, 75)" />
-
-    </div>
+    <div className="relative">
+    <h1 className="text-5xl font-bold">Angle</h1>
+    <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)" />
+    <h1 className="text-5xl font-bold">Acceleration(m/s)</h1>
+    <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)" />
+    <h1 className="text-5xl font-bold">Velocity(m/s)</h1>
+    <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(0, 128, 255)" />
+    <h1 className="text-5xl font-bold">Skin Response</h1>
+    <Graph data={gsrData} label="Skin response" borderColor="rgb(255, 165, 0)" />
+    <h1 className="text-5xl font-bold">Electro-myograph</h1>
+    <Graph data={emgData} label="EMG signal" borderColor="rgb(0, 64, 80)" />
+  </div>
+  
   );
 }
 
