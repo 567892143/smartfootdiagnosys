@@ -124,6 +124,9 @@ function Plantar() {
           rightfootpoint4max: [...y+","],
           rightfootpoint1by4maxpressure: [...q+","],
           rightfootpoint2by4maxpressure: [...r+","],
+          
+          
+          
           rightfootpoint3by4maxpressure: [...AA+","],
         
           gsr1: [...s+","],
