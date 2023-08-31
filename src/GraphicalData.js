@@ -49,6 +49,7 @@ function GraphicalData() {
   const [accelerationData, setAccelerationData] = useState([]);
   const [velocityData, setVelocityData] = useState([]);
   const [gsrData, setGsrData] = useState([]);
+  
   const [emgData, setEmgData] = useState([]);
 
  
