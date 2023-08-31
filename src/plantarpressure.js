@@ -128,6 +128,7 @@ function Plantar() {
         
           gsr1: [...s+","],
           temperature1: [...t+","],
+          EMG :[...GH+","],
         })
         .then((docRef) => {
           console.log('Document written with ID:', docRef.id);
@@ -409,6 +410,7 @@ function Plantar() {
                 <p className="my-2 text-[#1bb669]">Velocity = {leftData11}</p>
                 <Link to="/graphical-data"><button className='bg-blue-400 hover:bg-blue-600 rounded-md px-3 hover:text-white'>graphical data</button></Link>
               </div>
+
             </div>
 
             <div className="pl-5 py-2 mb-4">
