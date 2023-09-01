@@ -14,7 +14,7 @@ if (Chart?.scale?.Service) {
 }
 
 function Graph(props) {
-  const { data, label, borderColor } = props;
+  const { data, label, borderColor, xAxisLabel, yAxisLabel } = props;
 
   const chartRef = useRef(null);
 
@@ -37,12 +37,32 @@ function Graph(props) {
     ],
   };
 
+  const chartOptions = {
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: xAxisLabel, // X-axis label
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: yAxisLabel, // Y-axis label
+        },
+      },
+    },
+  };
+
   return (
     <div className="w-2/4 h-96 mx-auto">
-      <Line ref={chartRef} data={chartData} />
+      <Line ref={chartRef} data={chartData} options={chartOptions} />
     </div>
   );
 }
+
+  
+  
 
 function GraphicalData() {
   const [gyroData, setGyroData] = useState([]);
@@ -87,15 +107,15 @@ function GraphicalData() {
   return (
     <div className="relative">
     <h1 className="text-5xl font-bold">Angle</h1>
-    <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)" />
+    <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)"   xAxisLabel="Degrees"  yAxisLabel="time"/>
     <h1 className="text-5xl font-bold">Acceleration(m/s)</h1>
-    <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)" />
+    <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)"  xAxisLabel="speed"  yAxisLabel="time" />
     <h1 className="text-5xl font-bold">Velocity(m/s)</h1>
-    <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(0, 128, 255)" />
+    <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(0, 128, 255)"  xAxisLabel="displacement"  yAxisLabel="time" />
     <h1 className="text-5xl font-bold">Skin Response</h1>
-    <Graph data={gsrData} label="Skin response" borderColor="rgb(255, 165, 0)" />
+    <Graph data={gsrData} label="Skin response" borderColor="rgb(255, 165, 0)"  xAxisLabel="conduction"  yAxisLabel="time" />
     <h1 className="text-5xl font-bold">Electro-myograph</h1>
-    <Graph data={emgData} label="EMG signal" borderColor="rgb(0, 64, 80)" />
+    <Graph data={emgData} label="EMG signal" borderColor="rgb(0, 64, 80)"  xAxisLabel="movement"  yAxisLabel="time"/>
   </div>
   
   );
