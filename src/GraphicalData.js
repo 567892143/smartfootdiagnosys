@@ -107,15 +107,15 @@ function GraphicalData() {
   return (
     <div className="relative">
     <h1 className="text-5xl font-bold">Angle</h1>
-    <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)"   xAxisLabel="Degrees"  yAxisLabel="time"/>
-    <h1 className="text-5xl font-bold">Acceleration(m/s)</h1>
-    <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)"  xAxisLabel="speed"  yAxisLabel="time" />
+    <Graph data={gyroData} label="FootKinematics angle" borderColor="rgb(192, 75, 75)"   yAxisLabel="Degrees"  xAxisLabel="time"/>
+    <h1 className="text-5xl font-bold">Acceleration(m/s^2)</h1>
+    <Graph data={accelerationData} label="Foot kinematics acceleration" borderColor="rgb(75, 192, 75)"  yAxisLabel="speed"  xAxisLabel="time" />
     <h1 className="text-5xl font-bold">Velocity(m/s)</h1>
-    <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(0, 128, 255)"  xAxisLabel="displacement"  yAxisLabel="time" />
+    <Graph data={velocityData} label="Foot kinematics velocity" borderColor="rgb(0, 128, 255)"  yAxisLabel="displacement"  xAxisLabel="time" />
     <h1 className="text-5xl font-bold">Skin Response</h1>
-    <Graph data={gsrData} label="Skin response" borderColor="rgb(255, 165, 0)"  xAxisLabel="conduction"  yAxisLabel="time" />
+    <Graph data={gsrData} label="Skin response" borderColor="rgb(255, 165, 0)"  yAxisLabel="conduction"  xAxisLabel="time" />
     <h1 className="text-5xl font-bold">Electro-myograph</h1>
-    <Graph data={emgData} label="EMG signal" borderColor="rgb(0, 64, 80)"  xAxisLabel="movement"  yAxisLabel="time"/>
+    <Graph data={emgData} label="EMG signal" borderColor="rgb(0, 64, 80)"  yAxisLabel="movement"  xAxisLabel="time"/>
   </div>
   
   );
