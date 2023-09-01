@@ -131,7 +131,7 @@ function Plantar() {
         
           gsr1: [...s+","],
           temperature1: [...t+","],
-          EMG :[...GH+","],
+          EMG1 :[...GH+","],
         })
         .then((docRef) => {
           console.log('Document written with ID:', docRef.id);
